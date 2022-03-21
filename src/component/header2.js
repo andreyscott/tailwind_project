@@ -1,6 +1,18 @@
 import React from 'react'
 
 export default function Header2() {
+
+    let Links = [
+        {name: 'Home', link: '/'},
+        {name: 'Gallery', link: '/gallery'},
+        {name: 'Contact', link: '/contact'},
+        {name: 'About', link: '/about'},
+        {name: 'BootyServices', link: '/services'}
+    ];
+
+    const [isOpen, setIsOpen] = React.useState(false);
+
+
   return (
     
     <nav className="bg-white shadow dark:bg-gray-800">
@@ -21,11 +33,17 @@ export default function Header2() {
 
             <div className="items-center md:flex">
                 <div className="flex flex-col md:flex-row md:mx-6">
-                    <a className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Home</a>
-                    <a className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Shop</a>
-                    <a className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Contact</a>
-                    <a className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">About</a>
+                {
+                    Links.map((link, index) => {
+                        return (
+                            <a className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href={link.link} key={index}>{link.name}</a>
+                        )
+                    })
+                }
+                    
                 </div>
+
+                
 
                 <div className="flex justify-center md:block">
                     <a className="relative text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#">
