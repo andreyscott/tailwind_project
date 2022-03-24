@@ -1,12 +1,20 @@
-import './App.css';
-import Header from './component/header';
-import Header2 from './component/header2';
+import { Outlet, Link } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <Header2 />
-  
+    <div>
+      <h1>Bookkeeper</h1>
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}
+      >
+        <Link to="/invoices">Invoices</Link> |{" boobes"}
+        <Link to="/expenses">Expenses</Link>
+        
+      </nav>
+      <Outlet />
+    </div>
   );
 }
-
-export default App;

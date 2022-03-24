@@ -1,4 +1,10 @@
 import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 export default function Header2() {
 
@@ -35,7 +41,7 @@ export default function Header2() {
                 {
                     Links.map((link, index) => {
                         return (
-                            <a className="my-1 p-2 text-md font-medium text-gray-700 transition-all duration-5000 ease-in-out transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href={link.link} key={index}>{link.name}</a>
+                          <Link to={link.link} > <a className="my-1 p-2 text-md font-medium text-gray-700 transition-all duration-5000 ease-in-out transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href={link.link} key={index}>{link.name}</a> </Link> 
                         )
                     })
                 }
