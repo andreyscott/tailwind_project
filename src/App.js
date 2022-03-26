@@ -1,9 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
+import Header2 from "./component/header2";
 
 export default function App() {
   return (
     <div>
-      <h1>Bookkeeper</h1>
+      <Header2 />
       <nav
         style={{
           borderBottom: "solid 1px",
